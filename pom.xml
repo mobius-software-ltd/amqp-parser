@@ -9,7 +9,7 @@
 
 	<groupId>com.mobius-software.amqp</groupId>
 	<artifactId>amqp-parser</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 
 	<packaging>jar</packaging>
 	
@@ -20,7 +20,7 @@
 		<url>https://github.com/mobius-software-ltd/amqp-parser</url>
 		<connection>scm:git:git://github.com:mobius-software-ltd/amqp-parser.git</connection>
 		<developerConnection>scm:git:git@github.com:mobius-software-ltd/amqp-parser.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>amqp-parser-1.0.1</tag>
 	</scm>
 
 	<properties>
