@@ -11,7 +11,9 @@
 	<artifactId>amqp-parser</artifactId>
 	<version>1.0.1-SNAPSHOT</version>
 
-	<name>com.mobius-software.amqp:parser</name>
+	<packaging>jar</packaging>
+	
+	<name>amqp-parser</name>
 	<description>Mobius AMQP PARSER</description>
 
 	<scm>
@@ -82,6 +84,15 @@
 		</plugins>
 	</build>
 
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</reporting>
+	
 	<profiles>
 		<profile>
         <id>src</id>
@@ -103,5 +114,24 @@
 	            </plugins>
 	        </build>
     	</profile>
+		<profile>
+	      <id>docs</id>
+	      <build>
+	        <plugins>
+	          <plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-javadoc-plugin</artifactId>
+	            <executions>
+	              <execution>
+	                <id>attach-javadocs</id>
+	                <goals>
+	                  <goal>jar</goal>
+	                </goals>
+	              </execution>
+	            </executions>
+	          </plugin>
+	        </plugins>
+	      </build>
+	    </profile>
 	</profiles>
 </project>
