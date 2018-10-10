@@ -6,7 +6,8 @@ import com.mobius.software.amqp.parser.tlv.impl.TLVList;
 
 public class AMQPProtoHeader extends AMQPHeader
 {
-	public static final AMQPProtoHeader VER_1_0_0 = new AMQPProtoHeader(0);
+	public static final AMQPProtoHeader VER_1_0_0_NO_SASL = new AMQPProtoHeader(0);
+	public static final AMQPProtoHeader VER_1_0_0_SASL = new AMQPProtoHeader(3);
 
 	private final String protocol = "AMQP";
 	private final int protocolId;
