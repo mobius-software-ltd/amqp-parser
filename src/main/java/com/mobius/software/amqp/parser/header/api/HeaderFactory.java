@@ -17,7 +17,7 @@ public class HeaderFactory
 	public static AMQPHeader getAMQP(ByteBuf buf)
 	{
 		TLVAmqp list = TLVFactory.getTlv(buf);
-		if (!list.getCode().equals(AMQPType.LIST_0) && list.getCode().equals(AMQPType.LIST_8) && list.getCode().equals(AMQPType.LIST_32))
+		if (list.getCode() != AMQPType.LIST_0 && list.getCode() != AMQPType.LIST_8 && list.getCode() != AMQPType.LIST_32)
 			throw new MalformedHeaderException("Received amqp-header with malformed arguments");
 
 		Byte byteCode = list.getConstructor().getDescriptorCode();
@@ -31,7 +31,7 @@ public class HeaderFactory
 	public static AMQPHeader getSASL(ByteBuf buf)
 	{
 		TLVAmqp list = TLVFactory.getTlv(buf);
-		if (!list.getCode().equals(AMQPType.LIST_0) && list.getCode().equals(AMQPType.LIST_8) && list.getCode().equals(AMQPType.LIST_32))
+		if (list.getCode() != AMQPType.LIST_0 && list.getCode() != AMQPType.LIST_8 && list.getCode() != AMQPType.LIST_32)
 			throw new MalformedHeaderException("Received sasl-header with malformed arguments");
 
 		Byte byteCode = list.getConstructor().getDescriptorCode();
