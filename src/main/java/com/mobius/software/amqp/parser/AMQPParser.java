@@ -21,7 +21,14 @@ import io.netty.buffer.Unpooled;
 
 public class AMQPParser
 {
+	private static final int DEFAULT_MAX_MESSAGE_SIZE = 65536;
+
 	public static ByteBuf next(ByteBuf buf)
+	{
+		return next(buf, DEFAULT_MAX_MESSAGE_SIZE);
+	}
+
+	public static ByteBuf next(ByteBuf buf, int maxMessageSize)
 	{
 		buf.markReaderIndex();
 		int length = buf.readInt();
@@ -38,6 +45,10 @@ public class AMQPParser
 			}
 		}
 		buf.resetReaderIndex();
+
+		if (length > maxMessageSize)
+			throw new IllegalArgumentException("message length exceeds limit:" + maxMessageSize + ", encoded length=" + length);
+
 		return Unpooled.buffer(length);
 	}
 
