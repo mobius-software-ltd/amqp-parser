@@ -1,7 +1,7 @@
 # AMQP-parser
 
 AMQP parser is a library designed for encoding and decoding of AMQP packets. It is written in Java. 
-AMQP parser is developed by [Mobius Software](http://www.mobius-software.com).
+AMQP parser is developed by [Mobius Software](https://www.mobius-software.com/).
 
 
 ## Getting Started
@@ -11,9 +11,9 @@ your project:
 
 ```
 <dependency>
-  <groupId>com.mobius-software.amqp</groupId>
+        <groupId>com.mobius-software.amqp</groupId>
 	<artifactId>amqp-parser</artifactId>
-<version>1.0.4-SNAPSHOT</version>
+        <version>1.0.4-SNAPSHOT</version>
 </dependency>
 ```
 Now you are able to start using AMQP parser.
